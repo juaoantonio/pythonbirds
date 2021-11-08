@@ -1,5 +1,9 @@
 class Pessoa:
+    # Atributos de classe
+    olhos = 2
+
     def __init__(self, *filhos,nome=None, idade=None):
+        # Atributos de instância
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
@@ -22,8 +26,17 @@ if __name__ == '__main__':
         print(filho.nome)
 
     luciano.sobrenome = 'Ramalho'  # Adicionando atributos dinâmicos
+    del luciano.filhos  # Removendo o atributo complexo criado anteriormente
 
+    luciano.olhos = 1
+    del luciano.olhos
     print(luciano.__dict__)  # Ver os atributos presentes no objeto
     print(renzo.__dict__)  # Ver os atributos presentes no objeto
 
-    del luciano.sobrenome  # Removendo o atributo dinâmico criado anteriormente
+    Pessoa.olhos = 3
+
+
+    print(luciano.olhos)
+    print(renzo.olhos)
+    print(Pessoa.olhos)
+    print(id(luciano.olhos), id(renzo.olhos), id(Pessoa.olhos))
