@@ -20,3 +20,10 @@ if __name__ == '__main__':
 
     for filho in luciano.filhos:
         print(filho.nome)
+
+    luciano.sobrenome = 'Ramalho'  # Adicionando atributos dinâmicos
+
+    print(luciano.__dict__)  # Ver os atributos presentes no objeto
+    print(renzo.__dict__)  # Ver os atributos presentes no objeto
+
+    del luciano.sobrenome  # Removendo o atributo dinâmico criado anteriormente
