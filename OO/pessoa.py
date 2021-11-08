@@ -2,6 +2,7 @@ class Pessoa:
     # Atributos de classe
     olhos = 2
 
+    # Métodos de Instância
     def __init__(self, *filhos,nome=None, idade=None):
         # Atributos de instância
         self.idade = idade
@@ -10,6 +11,15 @@ class Pessoa:
 
     def cumprimentar(self):
         return f'Olá {id(self)}'
+
+    # Métodos de Classe
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 
 
 if __name__ == '__main__':
@@ -40,3 +50,8 @@ if __name__ == '__main__':
     print(renzo.olhos)
     print(Pessoa.olhos)
     print(id(luciano.olhos), id(renzo.olhos), id(Pessoa.olhos))
+
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(id(Pessoa.metodo_estatico), id(luciano.metodo_estatico))
+
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
