@@ -83,7 +83,7 @@ oferece os seguintes atributos:
     'Norte'
 
     >>> # Construindo o carro
-    >>> carro = Carro()
+    >>> carro = Carro(motor, direcao)
     >>> # Testetando a velocidade
     >>> carro.calcular_velocidade()
     0
@@ -157,9 +157,9 @@ class Direcao:
 
 
 class Carro:
-    def __init__(self):
-        self.motor = Motor()
-        self.direcao = Direcao()
+    def __init__(self, motor, direcao):
+        self.motor = motor
+        self.direcao = direcao
 
     def calcular_velocidade(self):
         return self.motor.velocidade
